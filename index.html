@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Makeup Artist - RGB Background</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+<style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body, html { height: 100%; font-family: 'Cairo', sans-serif; }
+
+    /* ====== RGB Moving Background ====== */
+    body {
+        background: linear-gradient(270deg, #ff0000, #00ff00, #0000ff, #ff00ff);
+        background-size: 800% 800%;
+        animation: rgbBackground 20s ease infinite;
+        color: #fff;
+        line-height: 1.6;
+    }
+
+    @keyframes rgbBackground {
+        0% { background-position:0% 50%; }
+        50% { background-position:100% 50%; }
+        100% { background-position:0% 50%; }
+    }
+
+    a { text-decoration:none; color:inherit; }
+
+    /* ====== Header ===== */
+    header { padding:20px; text-align:center; background: rgba(0,0,0,0.3); }
+    header h1 { font-size:2rem; margin-bottom:10px; }
+    nav a { margin:0 10px; font-weight:bold; color:#fff; }
+    nav a:hover { text-decoration:underline; }
+
+    /* ====== Hero ===== */
+    .hero { padding:60px 20px; text-align:center; background: rgba(0,0,0,0.2); }
+    .hero h2 { font-size:2rem; margin-bottom:15px; }
+    .hero p { font-size:1.2rem; margin-bottom:20px; }
+    .btn { background:#ff5ca2; color:#fff; padding:10px 20px; border-radius:30px; font-weight:bold; transition:0.3s; }
+    .btn:hover { filter: brightness(1.2); }
+
+    /* ====== Sections ===== */
+    .section { padding:50px 20px; text-align:center; background: rgba(0,0,0,0.2); border-radius:15px; margin:20px; }
+    h2 { font-size:1.8rem; margin-bottom:30px; }
+
+    /* ====== Services ===== */
+    .services-container { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
+    .service-box { padding:20px; border-radius:15px; width:250px; background: rgba(0,0,0,0.3); }
+    .service-box i { font-size:2rem; margin-bottom:15px; }
+
+    /* ====== Gallery ===== */
+    .gallery-container { display:flex; flex-wrap:wrap; justify-content:center; gap:15px; }
+    .gallery-container img { width:300px; border-radius:15px; transition:0.3s; }
+    .gallery-container img:hover { transform: scale(1.05); }
+
+    /* ====== Contact ===== */
+    .contact form { max-width:500px; margin:auto; display:flex; flex-direction:column; gap:15px; }
+    .contact input, .contact textarea { padding:10px; border-radius:10px; border:1px solid #fff; background: rgba(0,0,0,0.3); color:#fff; }
+    .contact button { background:#ff5ca2; color:#fff; padding:12px; border:none; border-radius:30px; font-size:1rem; font-weight:bold; cursor:pointer; }
+
+    /* ====== Footer ===== */
+    footer { text-align:center; padding:20px; background: rgba(0,0,0,0.3); }
+
+    /* ====== Responsive ===== */
+    @media(max-width:768px) {
+        .services-container, .gallery-container { flex-direction:column; align-items:center; }
+        .service-box, .gallery-container img { width:90%; }
+    }
+</style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1><i class="fa-solid fa-wand-magic-sparkles"></i> Makeup Artist</h1>
+        <nav>
+            <a href="#services">الخدمات</a>
+            <a href="#gallery">الأعمال</a>
+            <a href="#contact">الحجز</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h2>إطلالة مثالية بلمسات فنية ✨💗</h2>
+        <p>مكياج احترافي للعرائس والمناسبات والجلسات التصويرية.</p>
+        <a href="#contact" class="btn">احجزي الآن</a>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="section">
+        <h2>الخدمات</h2>
+        <div class="services-container">
+            <div class="service-box">
+                <i class="fa-solid fa-heart"></i>
+                <h3>مكياج مناسبات</h3>
+                <p>إطلالة ناعمة وثابتة لكل مناسباتك.</p>
+            </div>
+            <div class="service-box">
+                <i class="fa-solid fa-crown"></i>
+                <h3>مكياج عرائس</h3>
+                <p>لوك فاخر يدوم طوال ليلة العمر.</p>
+            </div>
+            <div class="service-box">
+                <i class="fa-solid fa-camera-retro"></i>
+                <h3>جلسات تصوير</h3>
+                <p>مكياج مناسب للإضاءة والكاميرا.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="section">
+        <h2>الأعمال</h2>
+        <div class="gallery-container">
+            <img src="https://via.placeholder.com/300" alt="عمل 1">
+            <img src="https://via.placeholder.com/300" alt="عمل 2">
+            <img src="https://via.placeholder.com/300" alt="عمل 3">
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section contact">
+        <h2>الحجز والتواصل</h2>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="الاسم" required>
+            <input type="text" id="phone" placeholder="رقم الهاتف" required>
+            <input type="date" id="date" required>
+            <textarea id="notes" placeholder="ملاحظات (اختياري)"></textarea>
+            <button type="submit"><i class="fa-solid fa-paper-plane"></i> إرسال الطلب</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Makeup Artist – جميع الحقوق محفوظة</p>
+    </footer>
+
+    <!-- WhatsApp Script -->
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            const name = document.getElementById("name").value;
+            const phone = document.getElementById("phone").value;
+            const date = document.getElementById("date").value;
+            const notes = document.getElementById("notes").value;
+
+            const message = `مرحبا، أود حجز خدمة مكياج:\nالاسم: ${name}\nرقم الهاتف: ${phone}\nالتاريخ: ${date}\nملاحظات: ${notes}`;
+            const whatsappNumber = "212698210790";
+            const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+            window.open(url, "_blank");
+        });
+    </script>
+
+</body>
+</html>
